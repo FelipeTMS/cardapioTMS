@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 
 # Configurar a página para o modo amplo
-st.set_page_config(layout="wide", PAGE_TITLE="Cardápio TMS")
+st.set_page_config(layout="wide", page_title="Cardápio TMS")
 
 # Carregar os dados do arquivo Excel
 def carregar_dados(caminho):

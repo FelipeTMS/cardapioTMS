@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 
 # Configurar a página para o modo amplo
-st.set_page_config(layout="wide", page_title="Cardápio TMS")
+st.set_page_config(layout="wide", page_title="Celulares")
 
 # Carregar os dados do arquivo Excel
 def carregar_dados(caminho):
@@ -36,8 +36,8 @@ def filtrar_dados(dados, marca, nome_comercial, tela_intervalo, _5g,Ano_interval
 
 pasta_atual = pasta_datasets = Path(__file__).parent
 caminho_arquivo = pasta_atual / 'cardapio_tms.xlsx'
-
 df = carregar_dados(caminho_arquivo)
+
 
 # Sidebar - Filtros
 st.sidebar.header('Filtros')

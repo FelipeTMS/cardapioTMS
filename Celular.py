@@ -1,9 +1,11 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
+from PIL import Image
 
 # Configurar a página para o modo amplo
-st.set_page_config(layout="wide", page_title="Celulares")
+img = Image.open("TMS logo.png")
+st.set_page_config(layout="wide", page_title="Cardápio TMS",page_icon=img)
 
 # Carregar os dados do arquivo Excel
 def carregar_dados(caminho):
@@ -54,4 +56,9 @@ situacao_filtro = st.sidebar.multiselect('Situação', df['Situação'].unique()
 df_filtrado = filtrar_dados(df, marca_filtro, nome_comercial_filtro, tela_filtro, _5g_filtro, ano_Filtro, RAM_filtro, bateria_filtro, HD_Filtro  ,situacao_filtro)
 
 # Mostrar os dados no app
+st.markdown("""
+<div style="text-align: center;">
+    <h1>Cardápio TMS</h1>
+</div>
+""", unsafe_allow_html=True)
 st.write(df_filtrado)

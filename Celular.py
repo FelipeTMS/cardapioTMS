@@ -5,7 +5,7 @@ from PIL import Image
 
 # Configurar a página para o modo amplo
 img = Image.open("TMS logo.png")
-st.set_page_config(layout="wide", page_title="Cardápio TMS - Celular",page_icon=img)
+st.set_page_config(layout="wide", page_title="Cardápio TMS",page_icon=img)
 
 # Carregar os dados do arquivo Excel
 def carregar_dados(caminho):
@@ -58,7 +58,7 @@ df_filtrado = filtrar_dados(df, marca_filtro, nome_comercial_filtro, tela_filtro
 # Mostrar os dados no app
 st.markdown("""
 <div style="text-align: center;">
-    <h1>Cardápio TMS</h1>
+    <h1>Cardápio TMS - Celular</h1>
 </div>
 """, unsafe_allow_html=True)
 st.write(df_filtrado)

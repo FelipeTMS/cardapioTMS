@@ -70,7 +70,7 @@ df_filtrado_tab = filtrar_dados(df_tab,
                                 RAM_intervalo=RAM_filtro, 
                                 Bateria_intervalo=bateria_filtro, 
                                 HD_intervalo=HD_Filtro, 
-                                Foco=B2B_filtro, 
+                                Foco=None, 
                                 SO=SO_filtro)
 
 # Mostrar os dados no app

@@ -48,26 +48,29 @@ df_tab = carregar_dados(caminho_arquivo_tab)
 st.sidebar.header('Filtros')
 modelo_filtro = st.sidebar.multiselect('Modelo', df_tab['Modelo'].unique())
 SO_filtro = st.sidebar.multiselect('Sistema Operacional', df_tab['Sistema Operacional'].unique())
-#_5g_filtro = st.sidebar.checkbox('5G')
+Digital_filtro = st.sidebar.checkbox('Digital')
+Ethernet_filtro = st.sidebar.checkbox('Ethernet')
+B2B_filtro = st.sidebar.checkbox('Foco')
 tela_filtro = st.sidebar.select_slider('Tela', options=sorted(df_tab['Tela'].unique()), value=(min(df_tab['Tela']), max(df_tab['Tela'])))
 #ano_Filtro = st.sidebar.select_slider('Lançamento', options=sorted(df_tab['Lançamento'].unique()), value=(min(df_tab['Lançamento']), max(df_tab['Lançamento'])))
 RAM_filtro = st.sidebar.select_slider('RAM (GB)', options=sorted(df_tab['RAM (GB)'].unique()), value=(min(df_tab['RAM (GB)']), max(df_tab['RAM (GB)'])))
 bateria_filtro = st.sidebar.select_slider('Bateria (Wh)', options=sorted(df_tab['Bateria (Wh)'].unique()), value=(min(df_tab['Bateria (Wh)']), max(df_tab['Bateria (Wh)'])))
 HD_Filtro = st.sidebar.select_slider('Armazenamento Interno', options=sorted(df_tab['Armazenamento Interno'].unique()), value=(min(df_tab['Armazenamento Interno']), max(df_tab['Armazenamento Interno'])))
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
+peso_filtro = st.sidebar.select_slider('Peso', options=sorted(df_tab['Peso'].unique()), value=(min(df_tab['Peso']), max(df_tab['Peso'])))
 
 # Filtrar os dados com base nas seleções
 df_filtrado_tab = filtrar_dados(df_tab, 
                                 modelo_filtro, 
                                 SKU=None, 
                                 tela_intervalo=tela_filtro, 
-                                Digital=None, 
-                                Ethernet=None, 
-                                Peso_intervalo=None, 
+                                Digital=Digital_filtro, 
+                                Ethernet=Ethernet_filtro, 
+                                Peso_intervalo=peso_filtro, 
                                 RAM_intervalo=RAM_filtro, 
                                 Bateria_intervalo=bateria_filtro, 
                                 HD_intervalo=HD_Filtro, 
-                                Foco=None, 
+                                Foco=B2B_filtro, 
                                 SO=SO_filtro)
 
 # Mostrar os dados no app

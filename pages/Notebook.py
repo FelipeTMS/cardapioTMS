@@ -47,7 +47,7 @@ df_tab = carregar_dados(caminho_arquivo_tab)
 # Sidebar - Filtros
 st.sidebar.header('Filtros')
 modelo_filtro = st.sidebar.multiselect('Modelo', df_tab['Modelo'].unique())
-#nome_comercial_filtro = st.sidebar.multiselect('Nome comercial', df_tab['Nome comercial'].unique())
+SO_filtro = st.sidebar.multiselect('Sistema Operacional', df_tab['Sistema Operacional'].unique())
 #_5g_filtro = st.sidebar.checkbox('5G')
 #tela_filtro = st.sidebar.select_slider('Tela', options=sorted(df_tab['Tela'].unique()), value=(min(df_tab['Tela']), max(df_tab['Tela'])))
 #ano_Filtro = st.sidebar.select_slider('Lançamento', options=sorted(df_tab['Lançamento'].unique()), value=(min(df_tab['Lançamento']), max(df_tab['Lançamento'])))
@@ -57,7 +57,7 @@ modelo_filtro = st.sidebar.multiselect('Modelo', df_tab['Modelo'].unique())
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
 
 # Filtrar os dados com base nas seleções
-df_filtrado_tab = filtrar_dados(df_tab, modelo_filtro, SKU=None, tela_intervalo=None, Digital=None, Ethernet=None, Peso_intervalo=None, RAM_intervalo=None, Bateria_intervalo=None, HD_intervalo=None, Foco=None, SO=None)
+df_filtrado_tab = filtrar_dados(df_tab, modelo_filtro, SKU=None, tela_intervalo=None, Digital=None, Ethernet=None, Peso_intervalo=None, RAM_intervalo=None, Bateria_intervalo=None, HD_intervalo=None, Foco=None, SO_filtro)
 
 # Mostrar os dados no app
 

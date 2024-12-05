@@ -57,7 +57,7 @@ RAM_filtro = st.sidebar.select_slider('RAM (GB)', options=sorted(df_tab['RAM (GB
 bateria_filtro = st.sidebar.select_slider('Bateria (Wh)', options=sorted(df_tab['Bateria (Wh)'].unique()), value=(min(df_tab['Bateria (Wh)']), max(df_tab['Bateria (Wh)'])))
 HD_Filtro = st.sidebar.select_slider('Armazenamento Interno', options=sorted(df_tab['Armazenamento Interno'].unique()), value=(min(df_tab['Armazenamento Interno']), max(df_tab['Armazenamento Interno'])))
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
-peso_filtro = st.sidebar.select_slider('Peso', options=sorted(df_tab['Peso'].unique()), value=(min(df_tab['Peso']), max(df_tab['Peso'])))
+peso_filtro = st.sidebar.select_slider('Peso(Kg)', options=sorted(df_tab['Peso(Kg)'].unique()), value=(min(df_tab['Peso(Kg)']), max(df_tab['Peso(Kg)'])))
 
 # Filtrar os dados com base nas seleções
 df_filtrado_tab = filtrar_dados(df_tab, 

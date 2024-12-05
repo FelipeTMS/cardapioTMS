@@ -52,7 +52,7 @@ SO_filtro = st.sidebar.multiselect('Sistema Operacional', df_tab['Sistema Operac
 tela_filtro = st.sidebar.select_slider('Tela', options=sorted(df_tab['Tela'].unique()), value=(min(df_tab['Tela']), max(df_tab['Tela'])))
 #ano_Filtro = st.sidebar.select_slider('Lançamento', options=sorted(df_tab['Lançamento'].unique()), value=(min(df_tab['Lançamento']), max(df_tab['Lançamento'])))
 RAM_filtro = st.sidebar.select_slider('RAM (GB)', options=sorted(df_tab['RAM (GB)'].unique()), value=(min(df_tab['RAM (GB)']), max(df_tab['RAM (GB)'])))
-bateria_filtro = st.sidebar.select_slider('Bateria (mAh)', options=sorted(df_tab['Bateria (mAh)'].unique()), value=(min(df_tab['Bateria (mAh)']), max(df_tab['Bateria (mAh)'])))
+bateria_filtro = st.sidebar.select_slider('Bateria (Wh)', options=sorted(df_tab['Bateria (Wh)'].unique()), value=(min(df_tab['Bateria Wh)']), max(df_tab['Bateria (Wh)'])))
 HD_Filtro = st.sidebar.select_slider('Armazenamento Interno', options=sorted(df_tab['Armazenamento Interno'].unique()), value=(min(df_tab['Armazenamento Interno']), max(df_tab['Armazenamento Interno'])))
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
 

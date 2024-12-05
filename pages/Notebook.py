@@ -57,7 +57,7 @@ modelo_filtro = st.sidebar.multiselect('Modelo', df_tab['Modelo'].unique())
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
 
 # Filtrar os dados com base nas seleções
-df_filtrado_tab = filtrar_dados(df_tab, modelo_filtro)
+df_filtrado_tab = filtrar_dados(df_tab, modelo_filtro, SKU=None, tela_intervalo=None, Digital=None, Ethernet=None, Peso_intervalo=None, RAM_intervalo=None, Bateria_intervalo=None, HD_intervalo=None, Foco=None, SO=None)
 
 # Mostrar os dados no app
 

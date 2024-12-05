@@ -13,11 +13,11 @@ def carregar_dados(caminho):
     return dados
 
 # Função para filtrar os dados
-def filtrar_dados(dados, modelo, SKU, tela_intervalo, Digital,Ethernet, Peso_intervalo,RAM_intervalo, Bateria_intervalo, HD_intervalo,Foco, SO):
+def filtrar_dados(dados, modelo, Processador, tela_intervalo, Digital,Ethernet, Peso_intervalo,RAM_intervalo, Bateria_intervalo, HD_intervalo,Foco, SO):
     if modelo:
         dados = dados[dados['Modelo'].isin(modelo)]
-    if SKU:
-        dados = dados[dados['SKU'].isin(SKU)]
+    if Processador:
+        dados = dados[dados['Processador'].isin(Processador)]
     if tela_intervalo:
         dados = dados[dados['Tela'].between(tela_intervalo[0], tela_intervalo[1])]
     if Digital:
@@ -48,6 +48,7 @@ df_tab = carregar_dados(caminho_arquivo_tab)
 st.sidebar.header('Filtros')
 modelo_filtro = st.sidebar.multiselect('Modelo', df_tab['Modelo'].unique())
 SO_filtro = st.sidebar.multiselect('Sistema Operacional', df_tab['Sistema Operacional'].unique())
+Processador_filtro = st.sidebar.multiselect('Processador', df_tab['Processador'].unique())
 Digital_filtro = st.sidebar.checkbox('Digital')
 Ethernet_filtro = st.sidebar.checkbox('Ethernet')
 #B2B_filtro = st.sidebar.checkbox('Foco')
@@ -62,7 +63,7 @@ peso_filtro = st.sidebar.select_slider('Peso(Kg)', options=sorted(df_tab['Peso(K
 # Filtrar os dados com base nas seleções
 df_filtrado_tab = filtrar_dados(df_tab, 
                                 modelo_filtro, 
-                                SKU=None, 
+                                Processador=Processador_filtro, 
                                 tela_intervalo=tela_filtro, 
                                 Digital=Digital_filtro, 
                                 Ethernet=Ethernet_filtro, 

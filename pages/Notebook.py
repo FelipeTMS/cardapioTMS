@@ -31,7 +31,7 @@ def filtrar_dados(dados, modelo, Processador, tela_intervalo, Digital,Ethernet, 
     if Bateria_intervalo:
         dados = dados[dados['Bateria (Wh)'].between(Bateria_intervalo[0], Bateria_intervalo[1])]
     if HD_intervalo:
-        dados = dados[dados['Armazenamento Interno'].between(HD_intervalo[0], HD_intervalo[1])]
+        dados = dados[dados['Armazenamento Interno (GB)'].between(HD_intervalo[0], HD_intervalo[1])]
     if Foco:
         dados = dados[dados['Foco'] == "B2B"]
     if SO:
@@ -54,7 +54,7 @@ Ethernet_filtro = st.sidebar.checkbox('Ethernet')
 #B2B_filtro = st.sidebar.checkbox('Foco')
 tela_filtro = st.sidebar.select_slider('Tela', options=sorted(df_tab['Tela'].unique()), value=(min(df_tab['Tela']), max(df_tab['Tela'])))
 #ano_Filtro = st.sidebar.select_slider('Lançamento', options=sorted(df_tab['Lançamento'].unique()), value=(min(df_tab['Lançamento']), max(df_tab['Lançamento'])))
-HD_Filtro = st.sidebar.select_slider('Armazenamento Interno', options=sorted(df_tab['Armazenamento Interno'].unique()), value=(min(df_tab['Armazenamento Interno']), max(df_tab['Armazenamento Interno'])))
+HD_Filtro = st.sidebar.select_slider('Armazenamento Interno (GB)', options=sorted(df_tab['Armazenamento Interno (GB)'].unique()), value=(min(df_tab['Armazenamento Interno (GB)']), max(df_tab['Armazenamento Interno (GB)'])))
 RAM_filtro = st.sidebar.select_slider('RAM (GB)', options=sorted(df_tab['RAM (GB)'].unique()), value=(min(df_tab['RAM (GB)']), max(df_tab['RAM (GB)'])))
 bateria_filtro = st.sidebar.select_slider('Bateria (Wh)', options=sorted(df_tab['Bateria (Wh)'].unique()), value=(min(df_tab['Bateria (Wh)']), max(df_tab['Bateria (Wh)'])))
 #situacao_filtro = st.sidebar.multiselect('Situação', df_tab['Situação'].unique())
